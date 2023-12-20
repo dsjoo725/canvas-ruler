@@ -1,0 +1,30 @@
+.horizontal_ruler_tick_layout {
+  flex: 0 0 100px;
+  height: 32px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  border-right: 1px solid var(--color-grey30);
+  background-color: var(--color-grey05);
+}
+
+.horizontal_ruler_mark_layout {
+  height: 8px;
+
+  display: flex;
+}
+
+.horizontal_ruler_mark {
+  flex: 0 0 10px;
+  height: 100%;
+
+  box-sizing: border-box;
+  border-right: 1px solid var(--color-grey30);
+}
+
+.horizontal_ruler_label {
+  padding-inline: 4px;
+}

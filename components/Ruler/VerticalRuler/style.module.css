@@ -1,0 +1,15 @@
+.vertical_ruler_layout {
+  display: flex;
+  flex-direction: column;
+
+  height: 0;
+  width: 32px;
+
+  position: absolute;
+  top: 32px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+  border-right: 1px solid var(--color-grey10);
+}

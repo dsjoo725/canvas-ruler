@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import VerticalRulerTick from "../VerticalRulerTick";
 
 import style from "./style.module.css";
@@ -9,6 +9,14 @@ interface Props {
   scale: number;
 }
 function VerticalRuler({ height, offsetY, scale }: Props) {
+  const [interval, setInterval] = useState(100);
+
+  if ((scale * interval) / 100 < 50) {
+    setInterval(interval * 2);
+  }
+  if ((scale * interval) / 100 > 100) {
+    setInterval(interval / 2);
+  }
   return (
     <div
       id="vertical_ruler"
@@ -16,7 +24,12 @@ function VerticalRuler({ height, offsetY, scale }: Props) {
       style={{ height: `${height}px`, top: `${offsetY}px` }}
     >
       {Array.from({ length: height / 100 + 1 }).map((_, index) => (
-        <VerticalRulerTick key={index} label={((index * 100) / scale) * 100} />
+        <VerticalRulerTick
+          key={index}
+          label={index * interval}
+          scale={scale}
+          interval={interval}
+        />
       ))}
     </div>
   );

@@ -12,14 +12,17 @@ function RuluerPage() {
   const [offsetY, setOffsetY] = useState(32);
 
   const handleChangeWidth = (e: ChangeEvent<HTMLInputElement>) => {
+    if (Number(e.target.value) < 1) return;
     setWidth(Number(e.target.value));
   };
 
   const handleChangeHeight = (e: ChangeEvent<HTMLInputElement>) => {
+    if (Number(e.target.value) < 1) return;
     setHeight(Number(e.target.value));
   };
 
   const handleChangeScale = (e: ChangeEvent<HTMLInputElement>) => {
+    if (Number(e.target.value) < 10) return;
     setScale(Number(e.target.value));
   };
 
